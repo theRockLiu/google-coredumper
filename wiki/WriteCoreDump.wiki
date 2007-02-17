@@ -4,7 +4,7 @@
 
 == NAME ==
 
-WriteCoreDump, WriteCoreDumpLimited, WriteCompressedCoreDump - writes a snapshot of the current process
+[WriteCoreDump], [WriteCoreDump WriteCoreDumpLimited], [WriteCoreDump WriteCompressedCoreDump] - writes a snapshot of the current process
 
 == SYNOPSIS ==
 
