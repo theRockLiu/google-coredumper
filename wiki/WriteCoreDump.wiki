@@ -2,10 +2,6 @@
 
 = WriteCoreDump =
 
-== NAME ==
-
-[WriteCoreDump], [WriteCoreDump WriteCoreDumpLimited], [WriteCoreDump WriteCompressedCoreDump] - writes a snapshot of the current process
-
 == SYNOPSIS ==
 
 {{{
