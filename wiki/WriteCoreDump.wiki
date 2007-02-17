@@ -1,4 +1,5 @@
 #summary WriteCoreDump, WriteCoreDumpLimited, WriteCompressedCoreDump - writes a snapshot of the current process
+#labels Featured
 
 = WriteCoreDump =
 
