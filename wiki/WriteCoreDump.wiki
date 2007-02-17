@@ -15,24 +15,26 @@ WriteCoreDump, WriteCoreDumpLimited, WriteCompressedCoreDump - writes a snapshot
 
    int WriteCoreDumpLimited(const char *file_name, size_t max_length);
 
-   int WriteCompressedCoreDump(const char *file_name, size_t max_length, const struct CoredumperCompressor compressors[], struct CoredumperCompressor **selected_compressor);
+   int WriteCompressedCoreDump(const char *file_name, size_t max_length,
+                               const struct CoredumperCompressor compressors[],
+                               struct CoredumperCompressor **selected_compressor);
 }}}
 
 == DESCRIPTION ==
 
-The *WriteCoreDump*() function writes a core file to _file_name_. The calling process continues running after the file has been written.
+The *[WriteCoreDump]*() function writes a core file to _`file_name`_. The calling process continues running after the file has been written.
 
-The *WriteCoreDumpLimited*() function restricts the maximum length of the written file. This is similar to what setting calling *setrlimit*(2) does for system-generated core files.
+The *[WriteCoreDump WriteCoreDumpLimited]*() function restricts the maximum length of the written file. This is similar to what setting calling *setrlimit*(2) does for system-generated core files.
 
-The *WriteCompressedCoreDump*() function attempts to compress the core file on the fly, if a suitable _compressor_ could be located.
+The *[WriteCoreDump WriteCompressedCoreDump]*() function attempts to compress the core file on the fly, if a suitable _compressor_ could be located.
 
-If _selected_compressor_ is non-NULL, it will be set to the actual _CoredumperCompressor_ object used.
+If _selected`_`compressor_ is non-NULL, it will be set to the actual _`CoredumperCompressor`_ object used.
 
-The _filename_ automatically has a suitable suffix appended to it. Normally this would be ".bz2" for *bzip2*(1) compression, ".gz" for *gzip*(1) compression, or ".Z" for *compress*(1) compression. This behavior can be changed by defining custom _CoredumperCompressor_ descriptions. See the manual page for *GetCoreDump*(3) for more details.
+The _filename_ automatically has a suitable suffix appended to it. Normally this would be ".bz2" for *bzip2*(1) compression, ".gz" for *gzip*(1) compression, or ".Z" for *compress*(1) compression. This behavior can be changed by defining custom _`CoredumperCompressor`_ descriptions. See the manual page for *[GetCoreDump]*(3) for more details.
 
 == RETURN VALUE ==
 
-*WriteCoreDump*(), *WriteCoreDumpLimited*(), and *WriteCompressedCoreDump*() return zero on success and -1 on failure. In case of failure, _errno_ will be set appropriately.
+*[WriteCoreDump]*(), *[WriteCoreDump WriteCoreDumpLimited]*(), and *[WriteCoreDump WriteCompressedCoreDump]*() return zero on success and -1 on failure. In case of failure, _errno_ will be set appropriately.
 
 == ERRORS ==
 
@@ -44,8 +46,8 @@ The coredumper functions momentarily suspend all threads, while creating a COW (
 
 The functions are neither reentrant nor async signal safe. Callers should wrap a mutex around their invocation, if necessary.
 
-The current implementation tries very hard to behave reasonably when called from a signal handler, but no guarantees are made that this will always work. Most importantly, it is the caller's responsibility to make sure that there are never more than one instance of functions from the *GetCoreDump*() or *WriteCoreDump*() family executing concurrently.
+The current implementation tries very hard to behave reasonably when called from a signal handler, but no guarantees are made that this will always work. Most importantly, it is the caller's responsibility to make sure that there are never more than one instance of functions from the *[GetCoreDump]*() or *[WriteCoreDump]*() family executing concurrently.
 
 == SEE ALSO ==
 
-*GetCoreDump*(3), and *GetCompressedCoreDump*(3).
+*[GetCoreDump GetCoreDump]*(3), and *[GetCoreDump GetCompressedCoreDump]*(3).
