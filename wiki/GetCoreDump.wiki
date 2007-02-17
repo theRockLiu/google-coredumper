@@ -1,4 +1,5 @@
 #summary GetCoreDump, GetCompressedCoreDump - creates a copy-on-write snapshot of the current process
+#labels Featured
 
 = GetCoreDump =
 
