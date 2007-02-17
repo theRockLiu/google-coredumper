@@ -4,7 +4,7 @@
 
 == NAME ==
 
-GetCoreDump, GetCompressedCoreDump - creates a copy-on-write snapshot of the current process
+[GetCoreDump], [GetCoreDump GetCompressedCoreDump] - creates a copy-on-write snapshot of the current process
 
 == SYNOPSIS ==
 
