@@ -2,10 +2,6 @@
 
 = GetCoreDump =
 
-== NAME ==
-
-[GetCoreDump], [GetCoreDump GetCompressedCoreDump] - creates a copy-on-write snapshot of the current process
-
 == SYNOPSIS ==
 
 {{{
